@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Uniqlo in Brazil: Enter, Stage or Hold?</title>
+<meta name="description" content="A decision case on market entry. FGV Professional Master in International Management.">
+<meta name="theme-color" content="#ED1D24">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Uniqlo Case">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#ED1D24; --red-dark:#C4161C; --red-tint:#FDECEC;
+  --ink:#1A1A1A; --grey:#6E6E6E; --grey-lt:#9B9B9B;
+  --line:#E5E5E5; --paper:#FAFAFA; --white:#fff;
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --nav:60px;
+  --f:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--white);color:var(--ink);font-family:var(--f);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+button{font-family:inherit}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.96);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+  padding-top:var(--sat);
+}
+.bar-in{height:var(--nav);display:flex;align-items:center;gap:12px;padding:0 16px;max-width:1180px;margin:0 auto}
+.mark{
+  width:38px;height:38px;background:var(--red);color:#fff;flex:0 0 auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-weight:900;font-size:11px;line-height:1.02;letter-spacing:.5px;cursor:pointer;
+}
+.bar-t{font-weight:800;font-size:13.5px;letter-spacing:-.2px;line-height:1.15;flex:1;min-width:0}
+.bar-t span{display:block;font-weight:500;font-size:11px;color:var(--grey-lt);letter-spacing:.06em;text-transform:uppercase}
+.burger{margin-left:auto;background:none;border:1px solid var(--line);width:40px;height:36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer;border-radius:3px}
+.burger i{width:17px;height:2px;background:var(--ink);display:block;transition:.22s}
+.burger.on i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.on i:nth-child(2){opacity:0}
+.burger.on i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.menu{
+  position:fixed;top:calc(var(--nav) + var(--sat));left:0;right:0;bottom:0;z-index:55;
+  background:#fff;overflow-y:auto;padding:8px 0 40px;display:none;
+}
+.menu.on{display:block}
+.menu a{
+  display:flex;gap:12px;align-items:baseline;padding:13px 20px;text-decoration:none;
+  color:var(--ink);border-bottom:1px solid var(--line);font-weight:600;font-size:15px;
+}
+.menu a b{color:var(--red);font-weight:900;width:20px;flex:0 0 auto;font-size:13px}
+.menu a.act{background:var(--red-tint)}
+
+/* ---------- shell ---------- */
+main{padding-top:calc(var(--nav) + var(--sat));padding-bottom:calc(72px + var(--sab));min-height:100vh}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.view{display:none;animation:fade .3s ease}
+.view.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- home ---------- */
+.hero{padding:44px 0 34px;border-bottom:3px solid var(--red)}
+.kick{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-lt);margin-bottom:16px}
+.hero h1{
+  font-size:clamp(34px,10vw,72px);line-height:.94;font-weight:900;letter-spacing:-.035em;
+  margin:0 0 14px;text-transform:uppercase;
+}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero p{font-size:clamp(15px,4vw,19px);color:var(--grey);margin:0;max-width:44ch;font-weight:500}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin:0 0 6px;border-bottom:1px solid var(--line)}
+.stat{background:#fff;padding:20px 16px}
+.stat b{display:block;font-size:clamp(24px,7vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.stat b.r{color:var(--red)}
+.stat span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-lt);margin-top:7px}
+
+.sec-h{display:flex;align-items:center;gap:12px;margin:38px 0 18px}
+.sec-h h2{font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0;white-space:nowrap}
+.sec-h::after{content:"";height:2px;background:var(--red);flex:1}
+
+.ov{font-size:15.5px;color:var(--ink);line-height:1.62}
+.ov p{margin:0 0 13px}
+.ov strong{font-weight:800}
+.ov .hl{color:var(--red);font-weight:800}
+
+.cards{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
+.card{
+  display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);
+  background:#fff;text-decoration:none;color:var(--ink);cursor:pointer;text-align:left;
+  transition:.16s;width:100%;font-family:inherit;
+}
+.card:hover,.card:focus-visible{border-color:var(--red);transform:translateX(3px)}
+.card .n{
+  font-size:26px;font-weight:900;color:var(--red);line-height:1;flex:0 0 auto;width:30px;
+  letter-spacing:-.04em;
+}
+.card .tx b{display:block;font-size:15.5px;font-weight:800;letter-spacing:-.015em;line-height:1.25}
+.card .tx span{display:block;font-size:12.5px;color:var(--grey);margin-top:4px;font-weight:500}
+.card.big{background:var(--red);border-color:var(--red);color:#fff;padding:22px 18px;margin-top:12px}
+.card.big .n{color:#fff;font-size:20px;width:auto}
+.card.big .tx b{font-size:17px}
+.card.big .tx span{color:rgba(255,255,255,.82)}
+
+/* ---------- topic ---------- */
+.thead{padding:30px 0 0}
+.tnum{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--red);text-transform:uppercase}
+.thead h1{font-size:clamp(27px,7.5vw,46px);font-weight:900;letter-spacing:-.032em;line-height:1.03;margin:9px 0 10px}
+.tsub{
+  font-size:clamp(14px,4.2vw,18px);font-weight:700;color:var(--grey);border-left:4px solid var(--red);
+  padding-left:13px;margin:0 0 24px;line-height:1.35;
+}
+.numstrip{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:26px}
+.numstrip div{background:#fff;padding:14px 15px;flex:1 1 120px}
+.numstrip b{display:block;font-size:clamp(19px,5.5vw,26px);font-weight:900;color:var(--red);line-height:1;letter-spacing:-.03em}
+.numstrip span{display:block;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grey-lt);margin-top:6px;line-height:1.3}
+
+.blk{margin:0 0 26px}
+.blk h3{font-size:11.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:0 0 13px;padding-bottom:7px;border-bottom:2px solid var(--ink)}
+ul.pts{list-style:none;margin:0;padding:0}
+ul.pts li{position:relative;padding:0 0 0 20px;margin-bottom:13px;font-size:15px;line-height:1.55}
+ul.pts li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--red)}
+ul.pts li b{font-weight:800}
+ul.pts li .r{color:var(--red);font-weight:800}
+ul.pts ul{list-style:none;margin:9px 0 0;padding:0}
+ul.pts ul li{padding-left:16px;font-size:14px;color:var(--grey);margin-bottom:7px}
+ul.pts ul li::before{width:5px;height:5px;background:var(--grey-lt);top:8px}
+
+figure{margin:0 0 26px;border:1px solid var(--line);background:var(--paper);padding:10px}
+figure img{width:100%}
+figcaption{font-size:11px;color:var(--grey-lt);margin-top:9px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scrollx img{min-width:520px}
+.hint{display:none;font-size:10.5px;color:var(--grey-lt);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+
+.sowhat{background:var(--red);color:#fff;padding:22px 20px;margin:0 0 26px}
+.sowhat b{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:9px;font-weight:800}
+.sowhat p{margin:0;font-size:clamp(16px,4.4vw,20px);font-weight:700;line-height:1.38;letter-spacing:-.015em}
+
+.split{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:26px}
+.split>div{background:#fff;padding:17px}
+.split h4{margin:0 0 10px;font-size:11px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--red)}
+.split ul{list-style:none;margin:0;padding:0}
+.split li{font-size:14px;margin-bottom:8px;padding-left:16px;position:relative;line-height:1.45}
+.split li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--red)}
+.split.dark>div:last-child{background:var(--ink);color:#fff}
+.split.dark>div:last-child h4{color:#fff}
+.split.dark>div:last-child li::before{background:#fff}
+
+/* ---------- qa ---------- */
+.qa{margin:34px 0 0;border-top:3px solid var(--ink);padding-top:20px}
+.qa>b{display:block;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+details{border:1px solid var(--line);margin-bottom:8px;background:#fff}
+details[open]{border-color:var(--red)}
+summary{
+  padding:14px 42px 14px 15px;font-weight:700;font-size:14.5px;cursor:pointer;
+  list-style:none;position:relative;line-height:1.4;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:15px;top:50%;transform:translateY(-50%);
+  color:var(--red);font-weight:900;font-size:20px;line-height:1;
+}
+details[open] summary::after{content:"\2212"}
+details[open] summary{background:var(--red-tint)}
+.ans{padding:0 15px 15px;font-size:14.5px;color:var(--ink);line-height:1.6}
+.ans p{margin:11px 0 0}
+
+/* ---------- pager ---------- */
+.pager{display:flex;gap:10px;margin:36px 0 10px;border-top:1px solid var(--line);padding-top:18px}
+.pager button{
+  flex:1;border:1px solid var(--line);background:#fff;padding:14px 12px;cursor:pointer;
+  text-align:left;font-size:12.5px;font-weight:700;color:var(--ink);transition:.15s;
+}
+.pager button:hover{border-color:var(--red);color:var(--red)}
+.pager button span{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-lt);margin-bottom:4px;font-weight:800}
+.pager button:last-child{text-align:right}
+
+/* ---------- report ---------- */
+.rep{font-size:15.5px;line-height:1.68;max-width:74ch}
+.rep h2{font-size:15px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;margin:34px 0 12px;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:6px}
+.rep h3{font-size:14px;font-weight:800;margin:22px 0 9px}
+.rep p{margin:0 0 13px}
+.rep .li{margin:0 0 10px;padding-left:24px;position:relative}
+.rep .li em{position:absolute;left:0;font-style:normal;font-weight:800;color:var(--red)}
+.rep strong{font-weight:800}
+.pend{background:var(--red-tint);border-left:4px solid var(--red);padding:14px 16px;margin:16px 0;font-size:14px;font-weight:600}
+.bib{margin-top:34px}
+.bib details{border:2px solid var(--ink)}
+.bib summary{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:900}
+.bib .ans p{font-size:13px;line-height:1.5;margin:0 0 11px;color:var(--grey)}
+
+/* ---------- chatbot ---------- */
+.fab{
+  position:fixed;right:16px;bottom:calc(16px + var(--sab));z-index:70;width:58px;height:58px;
+  border-radius:50%;background:var(--red);border:none;cursor:pointer;color:#fff;
+  box-shadow:0 6px 22px rgba(237,29,36,.36);display:flex;align-items:center;justify-content:center;
+  transition:.2s;
+}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:26px;height:26px;fill:#fff}
+.fab .x{display:none}
+.fab.on .c{display:none}
+.fab.on .x{display:block}
+
+.chat{
+  position:fixed;right:0;bottom:0;left:0;top:0;z-index:69;background:#fff;display:none;
+  flex-direction:column;padding-top:var(--sat);
+}
+.chat.on{display:flex}
+.chat-h{background:var(--red);color:#fff;padding:15px 18px;flex:0 0 auto}
+.chat-h b{display:block;font-size:15px;font-weight:800;letter-spacing:-.01em}
+.chat-h span{font-size:11.5px;opacity:.85;font-weight:500}
+.log{flex:1;overflow-y:auto;padding:18px 16px 8px;background:var(--paper)}
+.msg{max-width:86%;margin-bottom:12px;padding:12px 14px;font-size:14.5px;line-height:1.55;border-radius:3px}
+.msg.b{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.msg.u{background:var(--red);color:#fff;margin-left:auto;font-weight:500}
+.msg strong{font-weight:800}
+.msg .r{color:var(--red);font-weight:800}
+.msg.u .r{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 14px}
+.chip{
+  background:#fff;border:1px solid var(--line);padding:8px 12px;font-size:12.5px;cursor:pointer;
+  font-weight:600;color:var(--ink);font-family:inherit;transition:.15s;border-radius:20px;
+}
+.chip:hover{border-color:var(--red);color:var(--red)}
+.chat-f{flex:0 0 auto;display:flex;gap:8px;padding:12px 14px calc(12px + var(--sab));border-top:1px solid var(--line);background:#fff}
+.chat-f input{
+  flex:1;border:1px solid var(--line);padding:13px 14px;font-size:16px;font-family:inherit;
+  outline:none;border-radius:3px;min-width:0;
+}
+.chat-f input:focus{border-color:var(--red)}
+.chat-f button{background:var(--red);color:#fff;border:none;padding:0 20px;font-weight:800;cursor:pointer;border-radius:3px;font-size:14px}
+.typing span{display:inline-block;width:6px;height:6px;background:var(--grey-lt);border-radius:50%;margin-right:3px;animation:bl 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bl{0%,60%,100%{opacity:.25}30%{opacity:1}}
+
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 40px;font-size:12px;color:var(--grey-lt);line-height:1.6}
+footer b{color:var(--ink);font-weight:700}
+
+@media(min-width:720px){
+  :root{--nav:66px}
+  .burger{display:none}
+  .menu{position:static;display:flex!important;background:none;overflow:visible;padding:0;margin-left:auto;top:auto;bottom:auto}
+  .menu a{border:none;padding:7px 9px;font-size:12.5px;font-weight:700}
+  .menu a b{display:none}
+  .menu a.act{background:none;color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
+  .menu a:hover{color:var(--red)}
+  .bar-t{flex:0 0 auto}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .cards{grid-template-columns:1fr 1fr}
+  .card.big{grid-column:1/-1}
+  .split{grid-template-columns:1fr 1fr}
+  .chat{left:auto;top:auto;width:392px;height:600px;max-height:calc(100vh - 110px);bottom:88px;right:18px;
+        box-shadow:0 18px 60px rgba(0,0,0,.24);border:1px solid var(--line)}
+  .scrollx img{min-width:0}
+}
+@media(max-width:719px){ .hint{display:block} }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="mark" onclick="go('home')">UNI<br>QLO</div>
+    <div class="bar-t">Uniqlo in Brazil <span>FGV &middot; MPGI</span></div>
+    <nav class="menu" id="menu"></nav>
+    <button class="burger" id="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" id="views"></div>
+  <div class="wrap">
+    <footer>
+      <b>Uniqlo in Brazil: Enter, Stage or Hold?</b><br>
+      A Decision Case on Market Entry &middot; Internationalization Strategies<br>
+      Fundação Getulio Vargas &middot; Professional Master in International Management<br><br>
+      André Nalepa Abbud &middot; Giovanna Santos Lins &middot; Guillermo Atoch Gil &middot; Marcos Ligeika &middot;
+      Sofia Bataltceva &middot; Sofia Flamand &middot; Stefano Avallone &middot; Thomas de Lesquen
+    </footer>
+  </div>
+</main>
+
+<button class="fab" id="fab" aria-label="Ask about the case">
+  <svg class="c" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7V9zm6 5H7v-2h6v2zm4-6H7V6h10v2z"/></svg>
+  <svg class="x" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+</button>
+
+<section class="chat" id="chat">
+  <div class="chat-h"><b>Ask about the case</b><span>Topics, numbers, frameworks, or how this was built</span></div>
+  <div class="log" id="log"></div>
+  <form class="chat-f" id="cform" autocomplete="off">
+    <input id="cin" placeholder="Type your question..." aria-label="Your question">
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script>
+/* ============================================================
+   CONTENT
+   ============================================================ */
+const TOPICS = [
+{
+  id:'1', nav:'Situation', title:'Situation and Framing',
+  sub:'Cyclical timing or structural design?',
+  nums:[['794','Stores in Japan'],['1,725','International stores'],['0','South America'],['R$314.9bn','Brazil apparel 2025']],
+  blocks:[
+    {h:'Where Uniqlo stands', pts:[
+      '<b>LifeWear:</b> simple, functional, high-quality everyday clothing.',
+      'South America is the <span class="r">only major region with zero presence</span>.',
+      'Brazil scouted, then shelved in <b>2025, before any capital was committed</b>.'
+    ]},
+    {h:'What the market says', pts:[
+      'Largest apparel market Uniqlo does not serve: <span class="r">R$314.9bn</span>, 6.4bn garments.',
+      'Revenue <span class="r">+6.8%</span> against volume <span class="r">+3.1%</span>.',
+      'Brazilians are <b>trading up, not buying more</b>. Exactly the shift LifeWear targets.'
+    ]}
+  ],
+  fig:['assets/world-map.jpg','Uniqlo store footprint by region'],
+  so:'Capital was never at risk, so the barrier is institutional, not commercial. Everything turns on one question: cyclical, and timing is all that matters, or structural, and sequence matters more.',
+  qa:[
+    ['If demand is growing, why walk away?','Demand was never the problem. The barrier sits at the border and in the tax system, and both hit cost before a garment reaches a shelf.'],
+    ['Has Uniqlo ever operated in Brazil?','No. Never a store anywhere in South America. This is a first entry, not a return.'],
+    ['Why does trading up matter?','It means the market is moving toward quality and durability rather than price alone, which is the ground Uniqlo competes on.']
+  ]
+},
+{
+  id:'2', nav:'Hymer', title:'Firm-Specific Advantage',
+  sub:'Not all advantages travel equally',
+  nums:[['SPA','Vertically integrated'],['HEATTECH','Proprietary fabric'],['AIRism','Engineered performance']],
+  blocks:[
+    {h:'The advantage', pts:[
+      'Hymer (1976): advantages must offset the <b>liability of foreignness</b>.',
+      'The core FSA is the <span class="r">SPA model</span>, planning through retail in one system.',
+      'It delivers scale, quality control and cost efficiency.'
+    ]}
+  ],
+  split:[
+    ['Travels well',['Fabric technology','Product quality','LifeWear brand'],'Proprietary knowledge and a global brand. Nothing taxes them at a border.'],
+    ['Most exposed',['SPA cost efficiency','Import-sensitive scale','Lead-time economics'],'Built on purchasing scale and replenishment speed. Both location-sensitive.']
+  ],
+  fig:['assets/hymer.jpg','Transferable strengths against the vulnerable cost advantage'],
+  so:'Brazil does not remove the advantages, it reweights them. Innovation, quality and brand survive intact. Cost efficiency becomes the exposed one, and it is precisely what the SPA model exists to protect.',
+  qa:[
+    ['Why is cost efficiency the weak point?','It is produced by scale and speed, and both depend on where you are. A 35% duty and a distant supply base attack exactly those two.'],
+    ['Does the brand offset that?','It justifies a premium. It cannot pay a tariff.']
+  ]
+},
+{
+  id:'3', nav:'B-READY', title:'Institutional Barriers',
+  sub:'The rule and the cost differ',
+  nums:[['35%','Import duty on apparel'],['\u22482.0\u00d7','Effective import factor'],['1,501h','Annual tax compliance'],['21 months','Rule created and revoked']],
+  blocks:[
+    {h:'Why B-READY', pts:[
+      'Three pillars: <b>Regulatory Framework</b> (rules as written), <b>Public Services</b>, <b>Operational Efficiency</b> (what firms actually face).',
+      'The <span class="r">de jure against de facto</span> gap is the point. Brazil\u2019s problem is not the law, it is what obeying it costs.',
+      'Two topics decide this case: <b>Taxation</b> and <b>International Trade</b>.'
+    ]},
+    {h:'Taxation', pts:[
+      '60+ overlapping taxes. CBS and IBS in transition through <b>2033</b>, so two systems run at once.',
+      '<span class="r">1,501 hours a year</span> of compliance. A <b>fixed cost</b> of holding a Brazilian entity, heaviest with few stores.'
+    ]},
+    {h:'International trade', pts:[
+      '<span class="r">35% duty</span>, the Mercosur ceiling. With IPI, PIS/Cofins and ICMS stacked: <span class="r">\u22482.0\u00d7 customs value</span>.',
+      'The rule itself moves. The 20% parcel duty was created Aug 2024 and revoked May 2026. <b>Twenty-one months.</b>'
+    ]},
+    {h:'Who this favours', pts:[
+      'Zara, Renner, Riachuelo and C&amp;A source locally and skip the duty on part of the mix. Shein scaled through parcels.',
+      'H&amp;M is a <b>recent entrant, not an incumbent</b>: first store Aug 2025, four by year end.'
+    ]}
+  ],
+  so:'The barrier is asymmetric. It leaves untouched everything that travels on proprietary knowledge and falls twice on the one location-sensitive advantage: as a duty that doubles landed cost, and as a compliance burden fixed regardless of scale.',
+  qa:[
+    ['Does the tax reform fix this?','It changes the written rule, not the operating burden. And through 2033 firms run under both systems at once.'],
+    ['Isn\u2019t 1,501 hours just a cost of business?','It is fixed, not variable. With few stores it is heaviest per unit sold, which penalises exactly the cautious entry a newcomer would choose.'],
+    ['Why not use the Doing Business ranking?','Discontinued in 2021 and replaced by B-READY. Those figures are the last comparable vintage, not current data.']
+  ]
+},
+{
+  id:'4', nav:'Hofstede', title:'Cultural Fit',
+  sub:'The gap is not quality',
+  nums:[['88 / 44','Long-term orientation'],['92 / 76','Uncertainty avoidance'],['42 / 59','Indulgence'],['54 / 69','Power distance']],
+  blocks:[
+    {h:'Two logics of dress', pts:[
+      '<b>Japan:</b> LTO 88, Masculinity 95. Craftsmanship over attention.',
+      '<b>Brazil:</b> Indulgence 59, Power Distance 69. Clothing as social expression.',
+      'Brazil\u2019s Masculinity of 49 kills the lazy reading. Not reserved against flashy, but <span class="r">two ways clothing creates value</span>.'
+    ]},
+    {h:'Why the gap is manageable', pts:[
+      'The tension is <b>aesthetic, not about quality</b>. The market is trading up, which runs toward Uniqlo.',
+      'Precedent: UT\u2019s <b>Feel the SEA</b> (2018) with local illustrators. A <span class="r">Feel Brasil</span> capsule costs a collection, not a strategy.',
+      'What adapts: colour, print, fit, communication, service. Not the product.'
+    ]},
+    {h:'The dimension that explains the firm', pts:[
+      'Uncertainty Avoidance: Japan <span class="r">92</span>, Brazil 76.',
+      'A high-UA firm facing rules that move without warning walks away <b>before</b> risking capital.',
+      'It makes the 2025 withdrawal consistent behaviour, and predicts Uniqlo needs stability, not just favourable maths.'
+    ]}
+  ],
+  fig:['assets/hofstede-top.jpg','Japan and Brazil across the relevant dimensions'],
+  fig2:['assets/hofstede-bottom.jpg','Market signals and the uncertainty gap'],
+  so:'Culture does not justify redesigning LifeWear, and it is not what stopped the entry. Adapt the customer-facing layer, keep the core. The binding constraint is institutional, which is why Topic 3 outweighs Topic 4.',
+  qa:[
+    ['Isn\u2019t Hofstede too blunt for this?','It is. National averages from a single-firm sample. They show where adaptation is likely, not how large a receptive segment is.'],
+    ['So Brazilians reject minimalism?','Not the claim. The market is trading up toward quality. The mismatch is at the vitrine, not the product.'],
+    ['Why put uncertainty avoidance in a culture section?','It is the only dimension that explains the firm rather than the shopper, and it links culture straight to the institutional diagnosis.']
+  ]
+},
+{
+  id:'5', nav:'I/R Grid', title:'Integration and Responsiveness',
+  sub:'Selective transnational, not multidomestic',
+  nums:[['Global','Uniqlo today'],['Transnational','Brazil target'],['Zara','The benchmark']],
+  blocks:[
+    {h:'Where the pressure sits', pts:[
+      'Both axes are high, but <b>not across the whole value chain</b>.',
+      '<b>Integration stays high:</b> fabric, purchasing scale, supplier control, LifeWear. Fragmenting these kills the FSA.',
+      '<b>Responsiveness at the interface:</b> seasonality, sizing, prices, instalments, tax and customs.',
+      'Inside the portfolio too: AIRism gains shelf space, heavy winter narrows to the south.'
+    ]}
+  ],
+  split:[
+    ['Keep global',['Product architecture','Brand standards','Supplier qualification','Quality thresholds'],'Headquarters retains these.'],
+    ['Adapt locally',['Climate-led assortment','Prices and instalments','Campaigns and collaborations','Tax and customs'],'A Brazilian team owns these. Supply and inventory are shared.']
+  ],
+  fig:['assets/ir-grid.png','Current position and Brazil entry target'],
+  so:'Localise the customer-facing and institution-facing decisions, not the business model. Every local change must solve a verified problem and justify its complexity.',
+  qa:[
+    ['Why not go multidomestic?','It would dismantle the scale economics that justify internationalising at all. The SPA model is the advantage.'],
+    ['Does Argentina teach Uniqlo about Brazil?','Half of it. Seasonality, sizing and instalments, yes. ICMS, customs and the CBS/IBS transition, no.']
+  ]
+},
+{
+  id:'6', nav:'Uppsala', title:'Entry Path',
+  sub:'Knowledge is not commitment',
+  nums:[['2001','UK before closer Asia'],['2005','Lotte JV, sole exception'],['12 yrs','H&M regional experience'],['0 yrs','Uniqlo in South America']],
+  blocks:[
+    {h:'Entry mode', pts:[
+      'Uniqlo <b>skips low-commitment modes</b>. Own stores, always. Lotte Korea 2005 is the one exception.',
+      'Highly centralised: identical standards everywhere, so little local learning is needed before opening.',
+      'Sequencing ignored psychic distance too. <b>UK in 2001</b>, ahead of closer Asian markets.'
+    ]},
+    {h:'Why digital-only is dead', pts:[
+      'Low-commitment modes exist to learn an <b>unfamiliar product-market fit</b> cheaply.',
+      'Uniqlo never has that problem. The product is standardised before it lands anywhere.',
+      'Brazil\u2019s barrier is <span class="r">tariff and tax</span>. The parcel channel touches neither.'
+    ]},
+    {h:'Knowledge against commitment', pts:[
+      'By 2025 Uniqlo <b>knew</b> the tariffs, the tax system, the cost. Information was not missing.',
+      'What it never had was <b>current activities</b>: no stores, no sourcing, no presence.',
+      'H&amp;M banked <span class="r">twelve years</span> of regional operation before Brazil. Uniqlo has zero.'
+    ]}
+  ],
+  fig:['assets/uppsala-chain.jpg','Establishment chain for Uniqlo'],
+  fig2:['assets/uppsala-process.jpg','Knowledge, commitment and current activities'],
+  so:'The gap is commitment, not knowledge, and the two cannot be closed with the same instrument. More study of the Brazilian tax code is no substitute for operating in the region.',
+  qa:[
+    ['Doesn\u2019t Uniqlo contradict Uppsala?','On entry mode, yes. On sequencing, no. It skips the low rungs but is now building regional knowledge in an easier market first.'],
+    ['Why not a joint venture in Brazil?','Only if a partner brings what Uniqlo cannot build: customs handling, mall access, distribution. Otherwise it dilutes control for nothing.']
+  ]
+},
+{
+  id:'7', nav:'Options', title:'Strategic Options',
+  sub:'Four routes, one live decision',
+  nums:[['100 \u2192 200','Landed cost index'],['A vs B','The live decision'],['C','Eliminated in Topic 6'],['D','Reference case']],
+  blocks:[
+    {h:'The decision rule', pts:[
+      'Irreversible capital under an <b>unstable written rule</b>. Deferral carries measurable value.',
+      'The question is which sequence <span class="r">preserves flexibility at the lowest competitive cost</span>.',
+      'The deciding row is <b>cost of being wrong</b>. Leases, an entity and a launched brand cannot be unwound at cost.'
+    ]}
+  ],
+  fig:['assets/options-matrix.jpg','The four routes scored under irreversibility'],
+  blocks2:[
+    {h:'The border arithmetic', pts:[
+      'A basic costing <span class="r">100</span> to land elsewhere costs about <span class="r">200</span> in Brazil, before margin.',
+      '<b>Double the price:</b> you enter Zara\u2019s band selling deliberately non-fashion basics.',
+      '<b>Hold the price:</b> margin collapses, and with it the SPA economics.',
+      '<b>The correction:</b> the functional basics band is empty because it <span class="r">cannot be served from imports</span>. Renner and Riachuelo hold it with local sourcing. The vacancy is the barrier, not an opening.'
+    ]},
+    {h:'The cost of waiting', pts:[
+      'H&amp;M: Brazil 2025, seven more stores in 2026, Argentina 2027, every state by 2028.',
+      'Uniqlo opening Argentina in 2027 and reassessing Brazil in 2029-30 arrives against <span class="r">four to five years</span> of H&amp;M national operation.',
+      'That is the real price of Option B. Worth paying only because a broken cost structure <b>does not get cheaper by being faster</b>.'
+    ]},
+    {h:'Cyclical or structural?', pts:[
+      'Rodrik (2011): Brazil chose <b>policy autonomy over deep integration</b>. The tariff is an output of that choice, not a deviation.',
+      'Acemoglu and Robinson (2012) agree on institutional persistence.',
+      'Volatility without trend: the parcel duty moved twice in 21 months, <span class="r">changing the rule without improving it</span>.',
+      '<b>Structural.</b> Waiting buys learning, not a better Brazil.'
+    ]},
+    {h:'What Option B must include', pts:[
+      'Argentina teaches the <b>commercial half</b>: seasonality, sizing, instalments.',
+      'It teaches <b>none of the institutional half</b>: ICMS, customs, CBS and IBS.',
+      'So build both <span class="r">in parallel</span>. Qualify Brazilian suppliers and customs capability while Argentina runs.'
+    ]},
+    {h:'Triggers', pts:[
+      '<b>1.</b> A Mercosur supplier at SPA volume and quality. <span class="r">The only one that dissolves the arithmetic.</span>',
+      '<b>2.</b> Mercosur and EU agreement moving.',
+      '<b>3.</b> CBS and IBS at a stable rate.',
+      '<b>4.</b> H&amp;M past roughly fifteen stores.',
+      '<b>5.</b> Argentine convertibility surviving 2027.'
+    ]}
+  ],
+  so:'Waiting buys learning, not a better Brazil. Option B stands on that ground alone, and the decision waits for observable triggers rather than the passage of time.',
+  qa:[
+    ['If the segment is empty, why not take it?','Because it is empty for a reason. At twice landed cost, holding that band guarantees losing it. The vacancy is the barrier made visible.'],
+    ['Isn\u2019t waiting just losing to H&M?','Partly, and the case says so. Entering second with a working cost structure still beats entering first with a broken one.'],
+    ['Why is Option C dismissed so fast?','Topic 6 settles it. Low-commitment modes solve product uncertainty. Uniqlo\u2019s problem is tariffs and tax.']
+  ]
+},
+{
+  id:'8', nav:'Recommendation', title:'Final Recommendation',
+  sub:'Argentina first, Brazil by trigger',
+  nums:[['Option B','Stage through Argentina'],['Own stores','Entry mode'],['Triggers','Not fixed dates']],
+  pending:true,
+  blocks:[
+    {h:'Option B', pts:[
+      '<b>Hold Brazil. Argentina first.</b>',
+      '<b>Why:</b> the FSAs are strong but neutralised at the border. Argentina buys regional knowledge at a fraction of the capital at risk.',
+      '<b>Timing:</b> triggers, not dates. Two to three years is a horizon, not a forecast.',
+      '<b>Mode:</b> wholly owned stores in Argentina. Brazil stays open, decided on Argentine evidence.',
+      '<b>Adapt:</b> mix to climate, sizing, prices and instalments. Keep the LifeWear core.',
+      '<b>Local appeal:</b> UT collections and Brazilian collaborations, without diluting the brand.'
+    ]}
+  ],
+  so:'The shelf is empty because nobody can reach it. Uniqlo should not reach for it until it can hold it.',
+  qa:[
+    ['What would change this?','A local supplier at SPA volume and quality. That single trigger removes the duty from part of the mix and dissolves the arithmetic.'],
+    ['Why not Brazil and Argentina at once?','It doubles irreversible capital while the Brazilian cost structure is unresolved, and destroys the option value that makes staging worth anything.'],
+    ['Isn\u2019t this deciding not to decide?','No. It sets a mode, a first market, a parallel build programme and five observable triggers. A decision with conditions, not a deferral.']
+  ]
+}
+];
+
+/* ============================================================
+   REPORT  —  swap the block between the two markers
+   ============================================================ */
+const REPORT = `
+<!-- ===== REPORT START ===== -->
+<h2>Summary</h2>
+<p>In 2025, Uniqlo scouted Brazil and shelved entry before committing capital. Since April 2026 the regional business press has reported that it is evaluating Argentina instead. This case asks whether Uniqlo should enter Brazil now, stage its entry through a neighbouring market, or hold the region, and concludes that the answer turns on the nature of the barrier rather than on the attractiveness of the market.</p>
+<p>Brazil is the largest apparel market Uniqlo does not serve, at R$314.9 billion in 2025, and it is trading up rather than down. The obstacle is institutional and, critically, asymmetric. An import duty of 35% and an effective import factor near twice customs value fall on the one firm-specific advantage that is location-sensitive, the cost efficiency of the SPA model, while leaving fabric technology and brand positioning untouched. The cultural distance is real but sits at the customer-facing layer and is solvable with limited collections rather than a redesigned business model. A digital-only entry is ruled out on analysis: low-commitment modes exist to learn unfamiliar product-market fit, and Uniqlo's problem in Brazil is tariff and tax, not unfamiliarity.</p>
+<p>The case recommends Option B. Uniqlo should hold Brazil, use Argentina as its first South American market, and reassess against defined observable triggers rather than a fixed date, because the barriers are structural rather than cyclical. Waiting buys regional operating experience, not a better Brazil.</p>
+
+<h2>1 Situation and Framing</h2>
+<p>Uniqlo is the flagship brand of Fast Retailing and is built on the LifeWear concept of simple, functional, high-quality everyday clothing. As of August 2025, the company operated 794 stores in Japan and 1,725 internationally, with consolidated positions in China, Southeast Asia, Europe and North America (EXAME, 2026a).</p>
+<p>South America is the only major populated region where Uniqlo has no presence. Brazil was scouted and then shelved in 2025, before any capital was committed (FORBES BRASIL, 2025). Fast Retailing has confirmed no date, investment or local partner for Argentina either.</p>
+<p><strong>What is at stake:</strong> Brazilian apparel retail turned over R$314.9 billion across 6.4 billion garments in 2025 (IEMI, 2025). It is the largest apparel market Uniqlo does not serve, and the gap is not one of demand. Revenue grew 6.8% while volume grew only 3.1%, meaning Brazilians are trading up rather than buying more, which is the movement LifeWear is built to capture.</p>
+<p><strong>Central question:</strong> the 2025 withdrawal happened before any capital was placed at risk, which points to barriers that are institutional rather than commercial. The case therefore asks not whether Brazil is attractive, but whether those barriers are cyclical, in which case timing is the only question, or structural, in which case sequence and entry design matter more than timing.</p>
+
+<h2>2 Firm-Specific Advantage (Hymer)</h2>
+<p>According to Hymer (1976), foreign firms need firm-specific advantages strong enough to offset their liability of foreignness. Uniqlo's main advantage is its SPA vertical model, which integrates product planning, material procurement, production coordination, distribution and retail, supporting economies of scale, quality control and cost efficiency. Its proprietary functional products, especially HEATTECH and AIRism, differentiate the brand through material innovation, while LifeWear provides a distinctive positioning based on simple, functional, high-quality everyday clothing.</p>
+<p>In Brazil, these strengths would have to compensate for limited local market knowledge, the absence of an established retail network and significant adaptation costs. The decisive issue, however, is that they are not equally transferable. Uniqlo's fabric technology and LifeWear positioning travel relatively well, because both rest on proprietary knowledge and a globally established brand, and neither is taxed at a border. The cost advantage generated by the SPA model is different in kind: it is produced by purchasing scale and by speed of replenishment, and both are location-sensitive.</p>
+<p><strong>So what:</strong> Brazil does not eliminate Uniqlo's firm-specific advantages, it changes their relative weight. Product innovation, quality and brand positioning survive intact as differentiators. Cost efficiency becomes the exposed advantage, and it is precisely the one the SPA model exists to protect. Sizing that exposure is the task of the institutional analysis in item 3.</p>
+
+<h2>3 Institutional Environment (B-READY)</h2>
+<p>Uniqlo scouted Brazil, home to the largest Japanese diaspora outside Japan, and withdrew in 2025 before committing capital. Because no capital was at risk, the barrier was institutional rather than commercial. This section sizes that barrier and identifies which of Uniqlo's advantages it actually attacks.</p>
+<h3>3.1 Why the framework matters here</h3>
+<p>B-READY replaced Doing Business in 2024 and assesses every economy on three pillars: the Regulatory Framework, meaning the rules as written; Public Services, meaning the state capacity that supports them; and Operational Efficiency, meaning what firms actually experience in practice (FIDAS, 2025). The separation between the de jure rule and the de facto burden is the analytically useful part for this case, because Brazil's difficulty is not only what the law requires but what complying with it costs. Brazil's aggregate structural cost premium is estimated at R$1.7 trillion per year (MDIC, 2023), but an aggregate of that kind tells an entrant nothing about which of its own advantages is at risk. Two of the ten B-READY topics decide the Uniqlo question: Taxation and International Trade.</p>
+<h3>3.2 Taxation</h3>
+<div class="li"><em>a)</em> More than 60 overlapping federal, state and municipal taxes, under a regime currently being rewritten. CBS and IBS entered test operation in 2026 at symbolic rates, with transition running to 2033.</div>
+<div class="li"><em>b)</em> A medium-sized firm spent 1,501 hours per year on tax compliance under the last comparable measurement (WORLD BANK, 2020). For Uniqlo this is not a rate but a fixed cost of maintaining a Brazilian legal entity, incurred before a single garment is sold and largely independent of store count.</div>
+<div class="li"><em>c)</em> The reform changes the Regulatory Framework pillar. It does not automatically improve Operational Efficiency, and throughout the 2026 to 2033 transition firms operate under both systems simultaneously.</div>
+<h3>3.3 International trade</h3>
+<div class="li"><em>a)</em> Apparel carries an import duty of 35%, the ceiling of the Mercosur common external tariff (BRASIL, 2021).</div>
+<div class="li"><em>b)</em> With IPI, PIS/Cofins and state ICMS compounding on top, the effective import factor for textiles reaches roughly 2.0 times customs value.</div>
+<div class="li"><em>c)</em> The written rule is not stable either. The 20% federal duty on parcels below US$50 was created in August 2024 and revoked in May 2026 (EXAME, 2026c), reversing the relative position of formal importers and the cross-border channel within twenty-one months.</div>
+<h3>3.4 The competitive consequence</h3>
+<p>Zara, Renner, Riachuelo and C&amp;A operate with local or regional sourcing that avoids the 35% duty on part of their mix, and Shein scaled through the cross-border parcel channel. H&amp;M is a recent entrant rather than an incumbent: it opened its first Brazilian store in August 2025, after the withdrawal decision, and closed the year with four stores (EXAME, 2026b).</p>
+<p><strong>So what:</strong> the institutional barrier is asymmetric, and that is what makes it strategically decisive rather than merely inconvenient. It does not touch the advantages identified in item 2 that travel on proprietary knowledge, because fabric technology and brand positioning are not taxed at a border. It falls almost entirely on the single advantage that is location-sensitive, the cost efficiency of the SPA model, and it falls on it twice: once as a duty that roughly doubles landed cost, and once as a compliance burden that is fixed regardless of scale. Uniqlo would enter Brazil having surrendered the advantage it competes on while retaining the advantages its rivals can partially imitate.</p>
+
+<h2>4 Cultural Fit (Hofstede)</h2>
+<h3>4.1 Japan</h3>
+<p>Japan scores 88 on Long-Term Orientation against 44 for Brazil, and 92 on Uncertainty Avoidance against 76 (HOFSTEDE, [2010?]). The first reflects a culture that values quality, precision and restraint, in which clothing is appreciated for craftsmanship and durability rather than for attracting attention; the concept of mottainai discourages waste and supports long product lifecycles. The second describes discomfort with ambiguity and a marked preference for predictable rules.</p>
+<p>Japan also scores high on Masculinity, 95, with moderate Power Distance, 54. High Masculinity here reflects achievement, mastery and performance rather than outward display, which fits Uniqlo's positioning around functional innovation: HEATTECH and AIRism create value through engineered performance rather than visible branding.</p>
+<h3>4.2 Brazil</h3>
+<p>Brazil scores 59 on Indulgence against 42 for Japan, consistent with a culture where clothing plays a stronger social and expressive role. Brazil scores higher on Power Distance, 69 against 54, which carries implications beyond product design: adaptation would extend to the customer experience, including staffing structure, service style and the expected level of personal interaction in stores. Brazil's Masculinity score of 49 is the figure that prevents a lazy reading. The contrast is not reserved Japan against flashy Brazil; the relevant difference is how clothing creates value.</p>
+<h3>4.3 Cultural tension and strategic implication</h3>
+<p>One qualification first. Hofstede's scores are national averages drawn from a single-firm sample. They indicate where adaptation is likely to be needed; they do not measure the size of any consumer segment.</p>
+<p><strong>First, the tension is aesthetic rather than about quality.</strong> Brazilian apparel retail turned over R$314.9 billion in 2025, with revenue growing 6.8% against volume growth of only 3.1%. IEMI attributes the gap to more planned purchases and a search for quality, durability and differentiation instead of decisions made on price alone (IEMI, 2025). That movement runs towards Uniqlo's strengths, not away from them.</p>
+<p><strong>Second, Uniqlo already has a precedent for selective adaptation.</strong> In 2018 the UT line launched the "Feel the SEA" collection with local illustrators from Indonesia, Thailand and the Philippines, adding cultural specificity to a global product without altering the LifeWear model. A "Feel Brasil" capsule would test local aesthetic preference at the cost of a collection rather than the cost of a strategy.</p>
+<p><strong>Third, Uncertainty Avoidance explains the firm rather than the consumer.</strong> A firm scoring 92 is unusually sensitive to environments where rules change without warning, and Brazil created and revoked its parcel duty within twenty-one months. This makes the 2025 withdrawal legible as consistent firm behaviour rather than as an isolated commercial judgement.</p>
+<p><strong>So what:</strong> the cultural gap does not justify redesigning LifeWear for Brazil, and it is not what stopped the entry. The mismatch sits at the customer-facing layer, where it is solvable through limited collections, communication and service design. The binding constraint is institutional, not cultural, which is why item 3 carries more weight than item 4 in the final decision.</p>
+
+<h2>5 Global Integration versus Local Responsiveness</h2>
+<p>Brazil creates strong pressure on both axes of the Prahalad and Doz (1987) framework, but the pressure is not equal across the value chain. The useful question is not whether Brazil should be different, but where difference creates value.</p>
+<p><strong>Global integration must remain high.</strong> The SPA system concentrates fabric development, purchasing scale, supplier control, quality and LifeWear positioning. Fragmenting these country by country would weaken precisely the firm-specific advantage that, in Hymer's terms, offsets the liability of foreignness.</p>
+<p><strong>Local responsiveness is also high, but it belongs at the market interface.</strong> Brazil reverses the seasonal calendar and differs in climate, fit, sizing, payment habits and the expressive role of dress. Tax and customs rules add institutional pressure requiring local expertise in pricing, inventory and compliance. Responsiveness should also vary within the portfolio: AIRism and lightweight basics remain global products but take more shelf space, while heavy winter lines narrow and are timed mainly to southern Brazil.</p>
+<p>Authority should follow the same split. Headquarters retains product architecture, brand standards, supplier qualification and quality. A Brazilian team controls assortment, launch timing, payment practices, communication and regulatory execution. Supply and inventory require shared authority, because local knowledge must be able to change the offer without disconnecting Brazil from the global system. It is this reciprocal relationship, rather than one-way instruction from headquarters, that makes a model transnational (BARTLETT; GHOSHAL, 1989).</p>
+<p><strong>So what:</strong> Uniqlo should localise its customer-facing and institution-facing decisions, not its business model. Known requirements such as tax compliance and inverted seasons can be designed before entry. Uncertain responses to sizing, colour and price architecture have to be learned through limited assortments before scaling.</p>
+<p><strong>One limit on the route that follows.</strong> Argentina builds Southern Cone knowledge on seasonality, sizing and instalment behaviour, but it does not build Brazilian institutional knowledge, because the tax and customs systems are not the same. Staging through Argentina buys the commercial half of the learning and not the institutional half.</p>
+
+<h2>6 Entry Path (Uppsala)</h2>
+<p>The Uppsala model describes internationalisation as incremental: firms advance along an establishment chain of rising commitment and move from psychically close to psychically distant markets, each step funded by knowledge accumulated in the previous one (JOHANSON; VAHLNE, 1977). Uniqlo departs from the model on entry mode and follows it on sequencing.</p>
+<h3>6.1 Entry mode: the establishment chain</h3>
+<div class="li"><em>a)</em> Uniqlo consistently skips low-commitment modes such as export, agents and franchise partners, entering new markets directly through its own stores. The Lotte joint venture in South Korea in 2005 is the one documented exception (LOTTE CORPORATION, 2024). The company is also highly centralised: its management model pushes identical standards into every store rather than giving local teams room to improvise.</div>
+<div class="li"><em>b)</em> Market sequencing has not strictly followed psychic distance either. Uniqlo opened in the United Kingdom in 2001, years ahead of culturally closer Asian markets.</div>
+<p><strong>Implication:</strong> without a partner offering something Uniqlo cannot build itself, there is no reason to enter Brazil through anything other than its own stores. This also rules out the digital-only route, for a precise reason. Low-commitment modes exist so that firms can learn an unfamiliar product-market fit cheaply before risking capital. Uniqlo does not have that problem in any market, because its product is standardised before it arrives. Brazil's barrier is tariff and tax, not product unfamiliarity, and the parcel channel solves neither.</p>
+<h3>6.2 The internationalisation process: knowledge and commitment</h3>
+<div class="li"><em>a)</em> By the time it shelved Brazil in 2025, Uniqlo already held substantial market knowledge: the tariff structure, the tax system and the cost of operating locally. The decision to walk away was not caused by missing information.</div>
+<div class="li"><em>b)</em> What Uniqlo never held was current activities in Brazil. No stores, no local sourcing, no operating presence.</div>
+<div class="li"><em>c)</em> H&amp;M ran current activities in Chile from 2013, Peru from 2015 and Uruguay from 2018, accumulating twelve years of regional operating experience before entering Brazil in 2025. Uniqlo has zero years of South American operating experience.</div>
+<p><strong>So what:</strong> Uniqlo's gap is not knowledge, it is commitment, and the two cannot be closed with the same instrument. The knowledge Uniqlo still lacks comes only from running a business in the region.</p>
+
+<h2>7 Strategic Options</h2>
+<h3>7.1 The decision rule</h3>
+<p>Entering physical retail is an irreversible commitment made under regulatory uncertainty, and where the written rule is itself unstable, deferral carries measurable value (RIVOLI; SALORIO, 1996). The question is not whether Uniqlo belongs in Brazil but which sequence preserves the most flexibility at the lowest competitive cost.</p>
+<h3>7.2 The field, narrowed</h3>
+<p>Option A enters Brazil now through wholly owned stores. Option B stages through Argentina and reassesses Brazil in two to three years. Option C is an asset-light digital beachhead, eliminated in item 6. Option D holds South America and is a reference case that prices inaction. The live decision is A against B, and the row that settles it is the cost of being wrong. Under irreversibility the loss from entering early and retreating exceeds the loss from entering late, because store leases, a legal entity and a launched brand cannot be unwound at acquisition cost.</p>
+<h3>7.3 The border arithmetic</h3>
+<p>Item 2 established that cost efficiency is the one firm-specific advantage exposed to location; item 3 established that the effective import factor for textiles reaches roughly 2.0 times customs value. On an index basis, a LifeWear basic costing 100 to land where Uniqlo already operates costs about 200 in Brazil, before any retail margin. Both ways out damage the proposition.</p>
+<div class="li"><em>a)</em> <strong>Hold the margin and double the price.</strong> The garment leaves the band where Uniqlo would face Renner and Riachuelo and enters Zara's, charging fashion prices for a product designed not to be fashion. Item 4 explains why this is the weakest position available.</div>
+<div class="li"><em>b)</em> <strong>Hold the price and absorb the cost.</strong> Gross margin collapses, and with it the economics that justify the SPA system.</div>
+<p><strong>This corrects the reading of Option A.</strong> The functional basics segment is genuinely unoccupied by a global player, and the arithmetic explains why. It is not an opening competitors overlooked but a band that cannot be served from imports, which is why Renner and Riachuelo serve it from local sourcing that never pays the 35% duty. The vacancy is evidence of the barrier, not of an opportunity.</p>
+<h3>7.4 The cost of waiting, dated</h3>
+<p>H&amp;M entered Chile, Peru and Uruguay through 2018, Brazil in 2025 with four stores by year end, announced seven more for 2026, confirmed Argentina for 2027 and targets presence in every Brazilian state by 2028. Opening in Argentina in 2027 and reassessing Brazil two to three years later means entering against an H&amp;M with four to five years of national operation. This is the real price of Option B. It is worth paying only because the alternative is entering with the cost structure in 7.3 unresolved, which does not become cheaper by being faster.</p>
+<h3>7.5 Cyclical or structural</h3>
+<p>Item 1 asked whether the barriers are cyclical, making timing the only question, or structural, making sequence and design matter more. Rodrik (2011) answers it: Brazil has chosen national policy autonomy over deep integration, and the 35% tariff and the compliance burden in item 3 are outputs of that choice, not deviations from it. Acemoglu and Robinson (2012) agree on institutional persistence, and apparel trade has long been shaped by protection rather than comparative advantage alone (RIVOLI, 2005). Volatility is genuine but does not trend: the parcel duty was created in August 2024 and revoked twenty-one months later, moving the rule without improving it.</p>
+<p><strong>The barriers are structural.</strong> Waiting therefore buys regional operating experience, not a better Brazil, and Option B must be justified on that ground alone.</p>
+<h3>7.6 What Option B must include to work</h3>
+<p>Item 5 objected that Argentina does not teach Brazil. The objection is correct, and it is a design requirement rather than a refutation. Argentina supplies the commercial half of the learning, meaning inverted seasonality, sizing, instalment behaviour and Southern Cone assortment. It supplies none of the institutional half, because ICMS, customs clearance and the CBS and IBS transition are Brazilian problems no Argentine operation encounters. The two halves must therefore be built in parallel. While the Argentine operation runs, Uniqlo should be qualifying Brazilian and Mercosur suppliers against SPA volume and quality standards and building customs and tax capability locally.</p>
+<h3>7.7 Decision triggers</h3>
+<div class="li"><em>a)</em> A Brazilian or Mercosur textile supplier reaching SPA volume and quality. This is the only trigger that removes the 35% duty from part of the mix, and so the only one that dissolves the arithmetic rather than softening it.</div>
+<div class="li"><em>b)</em> Movement on the Mercosur and European Union agreement, which would reset the import factor.</div>
+<div class="li"><em>c)</em> CBS and IBS reaching a stable effective rate for apparel, ending the dual-system transition.</div>
+<div class="li"><em>d)</em> H&amp;M passing roughly fifteen stores in Brazil, a threshold set here to mark the closing of the first mover window.</div>
+<div class="li"><em>e)</em> Argentine convertibility and profit remittance rules surviving the 2027 electoral cycle.</div>
+
+<h2>8 Final Recommendation</h2>
+<div class="pend">This section is being finalised by the group. The text below reflects the agreed direction and will be replaced by the final version.</div>
+<p>Our final recommendation is Option B: hold Brazil for now and use Argentina as the first South American market.</p>
+<div class="li"><em>a)</em> <strong>Why:</strong> Uniqlo's firm-specific advantages are strong but are neutralised at the Brazilian border by a 35% apparel duty and an effective import factor close to twice customs value. Argentina buys the regional knowledge the Uppsala logic calls for at a fraction of the capital at risk.</div>
+<div class="li"><em>b)</em> <strong>Timing:</strong> reassess Brazil against the observable triggers in item 7 rather than against a fixed date. Two to three years is a planning horizon, not a forecast that conditions will improve.</div>
+<div class="li"><em>c)</em> <strong>Entry mode:</strong> consistent with item 6, Uniqlo should enter Argentina through its usual wholly owned store model. The Brazilian mode remains an open decision to be settled on the evidence the Argentine operation produces.</div>
+<div class="li"><em>d)</em> <strong>Adaptation:</strong> keep the global LifeWear concept but adapt the product mix to Brazilian climate, sizing, price points and instalment habits.</div>
+<div class="li"><em>e)</em> <strong>Local appeal:</strong> expand UT graphic collections and Brazilian collaborations to answer the expressive function of dress, without diluting the core brand.</div>
+<div class="li"><em>f)</em> <strong>Framework logic:</strong> Hymer on the strength of the firm-specific advantages, B-READY on the institutional barrier that erodes them, Hofstede on both the taste gap and the uncertainty avoidance gap, the I/R grid on the size of the adaptation bill, Uppsala on sequencing and commitment, and the real options logic of item 7 on the value of deferring an irreversible investment.</div>
+<!-- ===== REPORT END ===== -->
+`;
+
+const BIB = [
+"ACEMOGLU, Daron; ROBINSON, James A. Why nations fail: the origins of power, prosperity, and poverty. New York: Crown Business, 2012.",
+"BARTLETT, Christopher A.; GHOSHAL, Sumantra. Managing across borders: the transnational solution. Boston: Harvard Business School Press, 1989.",
+"BRASIL. Câmara de Comércio Exterior. Resolução Gecex nº 272, de 19 de novembro de 2021: altera a Tarifa Externa Comum e a Lista de Exceções. Brasília, DF, 2021.",
+"EXAME. Uniqlo olha para a Argentina. O Brasil é o próximo? São Paulo, 11 maio 2026a.",
+"EXAME. H&M abre nova loja masculina em São Paulo, quinta da rede no Brasil. São Paulo, 23 fev. 2026b.",
+"EXAME. Fim da taxa das blusinhas: como fica o imposto para compras em sites como Shein e Aliexpress. São Paulo, 13 maio 2026c.",
+"FAST RETAILING CO., LTD. Annual Report 2001. Yamaguchi, 2001.",
+"FAST RETAILING CO., LTD. UNIQLO business model. Yamaguchi, 2026.",
+"FIDAS, Penelope Demetra. Business-ready: benchmarking business regulations at the global and subnational level. Washington, D.C.: World Bank, ago. 2025.",
+"FLEURY, Maria Tereza Leme. A (very) brief history of international business studies. São Paulo: Fundação Getulio Vargas, 2025.",
+"FORBES BRASIL. O caso Uniqlo não é o único. [S. l.], fev. 2025.",
+"GHEMAWAT, Pankaj. Distance still matters: the hard reality of global expansion. Harvard Business Review, v. 79, n. 8, p. 137-147, 2001.",
+"HOFSTEDE, Geert. The 6 dimensions model of national culture. [S. l.], [2010?].",
+"HYMER, Stephen H. The international operations of national firms: a study of direct foreign investment. Cambridge: MIT Press, 1976.",
+"IEMI. Brasil Têxtil: relatório setorial da indústria têxtil e de confecção brasileira. São Paulo, 2025.",
+"JOHANSON, Jan; VAHLNE, Jan-Erik. The internationalization process of the firm. Journal of International Business Studies, v. 8, n. 1, p. 23-32, 1977.",
+"LE MONDE DIPLOMATIQUE BRASIL. A \u201Ctaxa das blusinhas\u201D, a indústria têxtil e as disputas de discursos no Brasil. São Paulo, maio 2026.",
+"LEMOS, Francisco Figueira de; FLEURY, Maria Tereza Leme. Internationalization strategies: session 1. São Paulo: Fundação Getulio Vargas, 2025.",
+"LOTTE CORPORATION. FRL Korea. [S. l.]: Lotte Corporation, [2024].",
+"MDIC. Ministério do Desenvolvimento, Indústria, Comércio e Serviços. Custo Brasil: diagnóstico e agenda de competitividade. Brasília, DF, 2023.",
+"PRAHALAD, C. K.; DOZ, Yves L. The multinational mission: balancing local demands and global vision. New York: Free Press, 1987.",
+"RIVOLI, Pietra. The travels of a t-shirt in the global economy. Hoboken: John Wiley &amp; Sons, 2005.",
+"RIVOLI, Pietra; SALORIO, Eugene. Foreign direct investment and investment under uncertainty. Journal of International Business Studies, v. 27, n. 2, p. 335-357, 1996.",
+"RODRIK, Dani. The globalization paradox: democracy and the future of the world economy. New York: W. W. Norton, 2011.",
+"WORLD BANK. Doing Business 2020: comparing business regulation in 190 economies. Washington, D.C.: World Bank, 2020."
+];
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function pts(list){return '<ul class="pts">'+list.map(p=>'<li>'+p+'</li>').join('')+'</ul>';}
+function blocks(arr){return (arr||[]).map(b=>'<div class="blk"><h3>'+b.h+'</h3>'+pts(b.pts)+'</div>').join('');}
+function figure(f,scroll){
+  if(!f) return '';
+  return '<figure><div class="'+(scroll?'scrollx':'')+'"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy"></div>'+
+         '<figcaption>'+f[1]+'</figcaption>'+(scroll?'<div class="hint">Swipe to see the full figure</div>':'')+'</figure>';
+}
+function splitBlk(s){
+  if(!s) return '';
+  return '<div class="split dark">'+s.map(c=>'<div><h4>'+c[0]+'</h4><ul>'+c[1].map(i=>'<li>'+i+'</li>').join('')+
+    '</ul><p style="font-size:13px;color:inherit;opacity:.75;margin:12px 0 0;line-height:1.45">'+c[2]+'</p></div>').join('')+'</div>';
+}
+function qaBlk(qa){
+  return '<div class="qa"><b>Questions this raises</b>'+qa.map(q=>
+    '<details><summary>'+q[0]+'</summary><div class="ans"><p>'+q[1]+'</p></div></details>').join('')+'</div>';
+}
+function pagerFor(i){
+  const prev = i>0 ? TOPICS[i-1] : null, next = i<TOPICS.length-1 ? TOPICS[i+1] : null;
+  let h = '<div class="pager">';
+  h += prev ? '<button onclick="go(\''+prev.id+'\')"><span>Previous</span>'+prev.id+'. '+prev.nav+'</button>'
+            : '<button onclick="go(\'home\')"><span>Back</span>Overview</button>';
+  h += next ? '<button onclick="go(\''+next.id+'\')"><span>Next</span>'+next.id+'. '+next.nav+'</button>'
+            : '<button onclick="go(\'report\')"><span>Next</span>Full report</button>';
+  return h+'</div>';
+}
+
+function homeView(){
+  return '<section class="view" id="v-home">'+
+  '<div class="hero"><div class="kick">FGV &middot; MPGI &middot; Internationalization Strategies</div>'+
+  '<h1>Uniqlo in Brazil<br><em>Enter, Stage<br>or Hold?</em></h1>'+
+  '<p>A decision case on market entry, built on eight linked analyses.</p></div>'+
+  '<div class="stats">'+
+    '<div class="stat"><b>794</b><span>Stores in Japan</span></div>'+
+    '<div class="stat"><b>1,725</b><span>International stores</span></div>'+
+    '<div class="stat"><b class="r">0</b><span>South America</span></div>'+
+    '<div class="stat"><b>R$314.9bn</b><span>Brazil apparel 2025</span></div>'+
+  '</div>'+
+  '<div class="sec-h"><h2>The company</h2></div>'+
+  '<div class="ov">'+
+  '<p><strong>Uniqlo</strong> is the flagship brand of Japan\u2019s Fast Retailing, built on <strong>LifeWear</strong>: simple, functional, high-quality everyday clothing. Its engine is the <span class="hl">SPA model</span>, a vertically integrated system covering planning, sourcing, production, distribution and retail, which delivers scale, quality control and cost efficiency. Proprietary fabrics such as HEATTECH and AIRism carry the differentiation.</p>'+
+  '<p>As of August 2025 it operated <strong>794 stores in Japan and 1,725 internationally</strong>. <span class="hl">South America is the only major populated region where it has no presence at all.</span> Brazil was scouted and shelved in 2025, before any capital was committed. Argentina is now under evaluation.</p>'+
+  '<p>This case asks whether Uniqlo should enter Brazil now, stage through a neighbouring market, or hold the region, and answers it by testing whether the barrier is <strong>cyclical or structural</strong>.</p>'+
+  '</div>'+
+  '<div class="sec-h"><h2>The eight topics</h2></div>'+
+  '<div class="cards">'+
+    TOPICS.map(t=>'<button class="card" onclick="go(\''+t.id+'\')"><div class="n">'+t.id+'</div>'+
+      '<div class="tx"><b>'+t.title+'</b><span>'+t.sub+'</span></div></button>').join('')+
+    '<button class="card big" onclick="go(\'report\')"><div class="n">\u2192</div>'+
+      '<div class="tx"><b>Read the full report</b><span>Complete text and bibliography</span></div></button>'+
+  '</div></section>';
+}
+
+function topicView(t,i){
+  let h = '<section class="view" id="v-'+t.id+'">';
+  h += '<div class="thead"><div class="tnum">Topic '+t.id+' of 8</div><h1>'+t.title+'</h1></div>';
+  h += '<div class="tsub">'+t.sub+'</div>';
+  if(t.nums) h += '<div class="numstrip">'+t.nums.map(n=>'<div><b>'+n[0]+'</b><span>'+n[1]+'</span></div>').join('')+'</div>';
+  h += blocks(t.blocks);
+  h += splitBlk(t.split);
+  h += figure(t.fig, t.id==='7'||t.id==='6'||t.id==='4');
+  h += blocks(t.blocks2);
+  h += figure(t.fig2, t.id==='6'||t.id==='4');
+  h += '<div class="sowhat"><b>So what</b><p>'+t.so+'</p></div>';
+  h += qaBlk(t.qa);
+  h += pagerFor(i);
+  return h+'</section>';
+}
+
+function reportView(){
+  return '<section class="view" id="v-report">'+
+  '<div class="thead"><div class="tnum">Full document</div><h1>The Complete Report</h1></div>'+
+  '<div class="tsub">Every section, in full</div>'+
+  '<div class="rep">'+REPORT+'</div>'+
+  '<div class="bib"><details><summary>References and bibliography</summary><div class="ans">'+
+  BIB.map(b=>'<p>'+b+'</p>').join('')+'</div></details></div>'+
+  '<div class="pager"><button onclick="go(\'8\')"><span>Previous</span>8. Recommendation</button>'+
+  '<button onclick="go(\'home\')"><span>Back to</span>Overview</button></div>'+
+  '</section>';
+}
+
+document.getElementById('views').innerHTML =
+  homeView() + TOPICS.map((t,i)=>topicView(t,i)).join('') + reportView();
+
+document.getElementById('menu').innerHTML =
+  '<a href="#/home" data-k="home"><b></b>Overview</a>' +
+  TOPICS.map(t=>'<a href="#/'+t.id+'" data-k="'+t.id+'"><b>'+t.id+'</b>'+t.nav+'</a>').join('') +
+  '<a href="#/report" data-k="report"><b></b>Report</a>';
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+function go(k){ location.hash = '#/'+k; }
+function render(){
+  const k = (location.hash.replace('#/','') || 'home');
+  const target = document.getElementById('v-'+k) ? k : 'home';
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
+  document.getElementById('v-'+target).classList.add('on');
+  document.querySelectorAll('#menu a').forEach(a=>a.classList.toggle('act', a.dataset.k===target));
+  closeMenu();
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', render);
+
+const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+function closeMenu(){ menu.classList.remove('on'); burger.classList.remove('on'); }
+burger.addEventListener('click', ()=>{ menu.classList.toggle('on'); burger.classList.toggle('on'); });
+
+render();
+
+/* ============================================================
+   CHATBOT  —  keyword engine with typo tolerance
+   ============================================================ */
+const KB = [
+ {k:['hello','hi','hey','ola','oi','good morning','good afternoon','yo','hiya'],
+  a:'Hello. Ask me anything about the Uniqlo case: a topic, a number, a framework, or the recommendation itself.'},
+ {k:['thanks','thank','obrigado','cheers','ty','appreciate'],
+  a:'Any time. Ask away if something else comes up.'},
+ {k:['bye','goodbye','tchau','see you','later'],
+  a:'Good luck with the presentation.'},
+
+ {k:['what is this','about this','what project','what case','overview','summary','explain everything','tldr','tl dr','o que e isso','sobre o trabalho','resumo'],
+  a:'This is a market-entry decision case on <span class="r">Uniqlo in Brazil</span>, built for Internationalization Strategies at FGV. Eight linked analyses ask whether Uniqlo should enter Brazil now, stage through Argentina, go digital-only, or hold the region. The answer is <strong>Option B: Argentina first, Brazil by trigger.</strong>'},
+ {k:['who are you','who made','who did','who did it','who did the case','who did this','who is behind','behind this','made by','whose','team','group','authors','students','who wrote','names','quem fez','quem sao','autores','grupo','who did the work'],
+  a:'A group of eight from the FGV Professional Master in International Management: André A, Giovanna L, Guillermo G, Marcos L, Sofia B, Sofia F, Stefano A and Thomas L.'},
+ {k:['why uniqlo','why this company','why choose uniqlo','pick uniqlo'],
+  a:'Because it is a rare natural experiment. Uniqlo scouted Brazil and walked away <strong>before committing capital</strong>, which isolates the barrier as institutional rather than commercial. Most entry cases only show you what happened after the money was spent.'},
+
+ {k:['recommendation','recommend','conclusion','final answer','what should uniqlo do','verdict','decision','so what should','recomendacao','recomendacion','conclusao','resposta final','o que fazer'],
+  a:'<span class="r">Option B.</span> Hold Brazil, use Argentina as the first South American market, enter through wholly owned stores, and reassess Brazil against <strong>observable triggers rather than a fixed date</strong>, because the barriers are structural, not cyclical.'},
+ {k:['option a','enter now','enter immediately','why not enter','go now','just enter','porque nao entrar','por que nao entrar','nao entrar agora'],
+  a:'Option A fails on arithmetic. At roughly <span class="r">2.0× landed cost</span>, Uniqlo either doubles its price and ends up competing with Zara while selling deliberately non-fashion basics, or holds price and destroys the margin that justifies the SPA system. Neither is a position worth entering to occupy.'},
+ {k:['option b','argentina first','why argentina','stage','staging','neighbouring','neighboring'],
+  a:'Argentina buys <strong>regional operating experience</strong> at a fraction of the capital at risk: inverted seasonality, sizing, instalment behaviour. H&amp;M did exactly this, running Chile, Peru and Uruguay for twelve years before Brazil. But it only teaches the commercial half. The institutional half has to be built in parallel.'},
+ {k:['option c','digital','ecommerce','e-commerce','online only','parcel channel','marketplace','website only'],
+  a:'Eliminated in Topic 6. Low-commitment modes exist to learn an <strong>unfamiliar product-market fit</strong> cheaply. Uniqlo does not have that problem anywhere, because its product is standardised before it reaches any market. Brazil\u2019s barrier is tariff and tax, which the parcel channel does not touch.'},
+ {k:['option d','hold region','do nothing','walk away','skip south america','stay out'],
+  a:'A reference case rather than a candidate. It prices inaction and shows that holding is not neutral: entry cost rises with every point of share earlier entrants consolidate, and Uniqlo already has <span class="r">zero</span> presence in the only major region it does not serve.'},
+
+ {k:['border arithmetic','2.0x','2x','import factor','landed cost','100 200','double the cost','the arithmetic','price math'],
+  a:'The centre of the case. A LifeWear basic costing <span class="r">100</span> to land where Uniqlo already operates costs about <span class="r">200</span> in Brazil, before margin. Double the price and you become Zara without being fashion. Hold the price and the margin disappears. The SPA advantage is consumed at the border.'},
+ {k:['tariff','duty','35','import tax','mercosur ceiling','customs duty'],
+  a:'Apparel carries a <span class="r">35% import duty</span>, the ceiling of the Mercosur common external tariff. With IPI, PIS/Cofins and ICMS stacked on top, the effective import factor reaches roughly 2.0× customs value.'},
+ {k:['compliance','1501','1,501','hours','tax hours','bureaucracy','paperwork'],
+  a:'<span class="r">1,501 hours a year</span> of tax compliance under the last comparable measurement. For Uniqlo that is not a rate but a <strong>fixed cost of holding a Brazilian entity</strong>, incurred before a single sale and largely independent of store count, so it bites hardest with a small footprint.'},
+ {k:['b-ready','bready','b ready','de jure','de facto','pillars','world bank framework','doing business'],
+  a:'B-READY replaced Doing Business in 2024 and scores three pillars: <strong>Regulatory Framework</strong> (rules as written), <strong>Public Services</strong>, and <strong>Operational Efficiency</strong> (what firms actually experience). The <span class="r">de jure versus de facto</span> gap is the useful part: Brazil\u2019s problem is not only what the law says but what obeying it costs.'},
+ {k:['custo brasil','1.7 trillion','structural cost','cost of doing business'],
+  a:'An estimated <span class="r">R$1.7 trillion a year</span> in structural cost premium from bureaucracy, infrastructure gaps and regulatory instability. Useful for scale, useless for decisions: it tells an entrant nothing about which of its own advantages is at risk. That is why the case uses the B-READY topic structure instead.'},
+ {k:['parcel duty','blusinhas','us$50','usd 50','50 dollars','shein tax','revoked','twenty-one months','21 months'],
+  a:'The 20% federal duty on parcels below US$50 was created in <strong>August 2024</strong> and revoked in <strong>May 2026</strong>. Twenty-one months. It reversed the position of formal importers against the cross-border channel in the middle of the window an entrant would use to build its pricing model. Volatility without improvement.'},
+ {k:['cbs','ibs','tax reform','2033','transition','reforma'],
+  a:'CBS and IBS entered test operation in 2026 at symbolic rates, with transition running to <strong>2033</strong>. It changes the written rule, not the operating burden, and during the transition firms run under both systems at once. An entrant today prices a cost base that has not settled.'},
+
+ {k:['hymer','fsa','firm specific','firm-specific','advantage','liability of foreignness'],
+  a:'Hymer (1976) says a foreign firm needs advantages strong enough to offset its liability of foreignness. The insight here is that <strong>they do not travel equally</strong>: fabric technology and the LifeWear brand travel well because nothing taxes them at a border, while SPA cost efficiency is location-sensitive and is exactly what Brazil attacks.'},
+ {k:['spa','vertical','supply chain model','integrated model','specialty store'],
+  a:'SPA is Uniqlo\u2019s vertically integrated model covering planning, sourcing, production coordination, distribution and retail. It produces scale, quality control and cost efficiency. Because it runs on purchasing scale and replenishment speed, both location-sensitive, it is the advantage most exposed in Brazil.'},
+ {k:['lifewear','life wear','positioning','brand concept','o que e lifewear'],
+  a:'LifeWear is Uniqlo\u2019s concept: simple, functional, high-quality everyday clothing. It is deliberately not fashion, which is why pricing it into Zara\u2019s band would leave it with nothing to justify the price.'},
+ {k:['heattech','airism','fabric','technology','material'],
+  a:'Proprietary fabric technologies that differentiate through engineered performance rather than visible branding. They are among the advantages that transfer well, because they rest on proprietary knowledge rather than on local cost structure.'},
+
+ {k:['hofstede','culture','cultural','dimensions','cultural fit'],
+  a:'The case uses five dimensions. Japan LTO 88 against Brazil 44, Masculinity 95, Power Distance 54 against 69, Indulgence 42 against 59, and Uncertainty Avoidance 92 against 76. The conclusion: <strong>the gap is aesthetic, not about quality</strong>, and it sits at the customer-facing layer.'},
+ {k:['uncertainty avoidance','ua','uai','92','predictable rules'],
+  a:'The sharpest point in Topic 4. Japan scores <span class="r">92</span>, Brazil 76. It explains <strong>the firm, not the shopper</strong>: a high-UA firm facing rules that change without warning walks away before risking capital. It makes the 2025 withdrawal consistent behaviour rather than an isolated judgement.'},
+ {k:['feel brasil','feel the sea','ut','capsule','collaboration','local artists'],
+  a:'In 2018 the UT line ran <strong>Feel the SEA</strong> with local illustrators in Indonesia, Thailand and the Philippines: cultural specificity added to a global product without touching the LifeWear model. A <span class="r">Feel Brasil</span> capsule would test local taste at the cost of a collection rather than a strategy.'},
+ {k:['power distance','pdi','69','service','staffing'],
+  a:'Brazil 69 against Japan 54. It pushes adaptation beyond product into the customer experience: staffing structure, service style and the expected level of personal interaction in stores.'},
+
+ {k:['i/r','ir framework','integration','responsiveness','transnational','prahalad','doz','grid','quadrant'],
+  a:'Prahalad and Doz. Uniqlo sits in <strong>global standardisation</strong> today, alongside Muji. Brazil would push it toward <strong>transnational</strong>, where Zara already operates: integration stays high on product and supply, responsiveness rises at the market interface. The case calls for <span class="r">selective</span> transnational, not multidomestic redesign.'},
+ {k:['zara','inditex','benchmark'],
+  a:'The benchmark for the transnational quadrant: centrally integrated design and supply chain with assortments refreshed on local sales data. Also the competitor Uniqlo would be priced against in Brazil, which is the problem, since Zara sells fashion and LifeWear does not.'},
+ {k:['muji','ralph lauren','loreal','l\'oreal','other brands','comparison brands'],
+  a:'Positioning anchors on the I/R grid: Muji in global standardisation with Uniqlo, Zara in transnational, Ralph Lauren in international (licensing-led), L\u2019Oréal in multidomestic (adapted market by market).'},
+
+ {k:['uppsala','establishment chain','johanson','vahlne','entry path','incremental'],
+  a:'Uppsala predicts incremental commitment and movement from psychically close to distant markets. Uniqlo <strong>departs from it on entry mode</strong>, skipping export, agents and franchise and going straight to its own stores. It <strong>follows it on sequencing</strong>, now building regional knowledge in Argentina before Brazil.'},
+ {k:['psychic distance','psychically','uk 2001','united kingdom'],
+  a:'Uniqlo opened in the United Kingdom in 2001, years ahead of culturally closer Asian markets. Sequencing has been set by its own operating model, standardised product and centralised decisions, rather than by psychic distance.'},
+ {k:['knowledge','commitment','current activities','gap'],
+  a:'The core of Topic 6. By 2025 Uniqlo already <strong>knew</strong> the tariff structure, tax system and cost of operating. What it never had was <strong>current activities</strong>: no stores, no sourcing, no operating presence. The gap is commitment, not knowledge, and studying the tax code does not close it.'},
+ {k:['joint venture','jv','partner','lotte','korea','own stores','entry mode'],
+  a:'Uniqlo enters through wholly owned stores. The 2005 Lotte joint venture in Korea is the one documented exception, and it happened because the partner brought fast access to an established retail network. In Brazil a partner is justified only by demonstrable advantage in customs handling, mall access or distribution.'},
+
+ {k:['h&m','hm','h and m','competitor timeline','chile','peru','uruguay','twelve years','12 years'],
+  a:'The closest comparable. Chile 2013, Peru 2015, Uruguay 2018, Brazil 2025 with four stores by year end, seven more in 2026, Argentina confirmed for 2027 and every Brazilian state targeted by 2028. <span class="r">Twelve years</span> of regional experience before Brazil, against Uniqlo\u2019s zero.'},
+ {k:['competitors','renner','riachuelo','c&a','competition','rivals','local players','incumbents'],
+  a:'Zara, Renner, Riachuelo and C&amp;A source locally or regionally, avoiding the 35% duty on part of their mix. Shein scaled through the parcel channel. The functional basics band is empty <strong>because it cannot be served from imports</strong>, not because nobody noticed it.'},
+ {k:['empty shelf','vacancy','segment','gap in market','functional basics','white space'],
+  a:'The correction the case makes. The segment between Zara and the local chains is genuinely unoccupied by a global player, and the arithmetic explains why. It is a band that cannot be served from imports. <strong>The vacancy is evidence of the barrier, not of an opportunity.</strong>'},
+
+ {k:['triggers','when','what to watch','watch','conditions','monitor','indicators','signals','gatilhos','quando','milestones','checkpoints'],
+  a:'Five, in order of how directly they attack the constraint: <strong>1)</strong> a Brazilian or Mercosur supplier reaching SPA volume and quality, the only one that dissolves the arithmetic; <strong>2)</strong> movement on the Mercosur–EU agreement; <strong>3)</strong> CBS and IBS reaching a stable rate; <strong>4)</strong> H&amp;M passing roughly fifteen stores; <strong>5)</strong> Argentine convertibility surviving 2027.'},
+ {k:['rodrik','trilemma','structural','cyclical','globalization paradox','policy autonomy'],
+  a:'Rodrik (2011) answers the question Topic 1 opens. Brazil has chosen <strong>national policy autonomy over deep integration</strong>. The 35% tariff and the compliance burden are outputs of that choice, not deviations from it. So the barriers are structural: <span class="r">waiting buys learning, not a better Brazil.</span>'},
+ {k:['acemoglu','robinson','why nations fail','institutions','persistence'],
+  a:'Used alongside Rodrik on institutional persistence. Together they establish that the barrier will not simply pass with time, which is what forces the recommendation to rest on regional learning rather than on Brazil improving.'},
+ {k:['real options','irreversible','deferral','rivoli','salorio','option value','cost of being wrong'],
+  a:'Rivoli and Salorio (1996). Physical retail is irreversible capital under regulatory uncertainty, so deferral has measurable value. The decisive criterion is <strong>cost of being wrong</strong>: entering early and retreating costs more than entering late, because leases, a legal entity and a launched brand cannot be unwound at acquisition cost.'},
+ {k:['risk of option b','downside','criticism','weakness','objection','counterargument','what could go wrong','risk','risks','risco','riscos','risk of waiting','cost of waiting','danger','drawback'],
+  a:'Two honest risks. <strong>The competitive clock:</strong> waiting means entering against an H&amp;M with four to five years of national operation. <strong>Argentina is reversible:</strong> convertibility and profit repatriation stay policy-dependent, and the 2027 electoral cycle is live. The case states both rather than hiding them.'},
+ {k:['institutional half','commercial half','parallel','in parallel','build readiness','suppliers customs'],
+  a:'Argentina teaches seasonality, sizing and instalment behaviour. It teaches nothing about ICMS, customs clearance or the CBS/IBS transition. So the two halves must be built <span class="r">in parallel</span>: qualify Brazilian and Mercosur suppliers and build customs capability while Argentina runs. Otherwise you get a firm ready to merchandise in Brazil and unable to land goods there.'},
+
+ {k:['market size','314','R$314','apparel market','brazil market','6.4','garments','numbers','figures','data','key numbers','numeros','dados','stats'],
+  a:'Brazilian apparel retail turned over <span class="r">R$314.9 billion</span> across 6.4 billion garments in 2025. Revenue grew 6.8% while volume grew 3.1%, so Brazilians are <strong>trading up, not buying more</strong>, which is the shift LifeWear targets.'},
+ {k:['794','1725','1,725','store count','how many stores','footprint'],
+  a:'As of August 2025: <strong>794 stores in Japan</strong> and <strong>1,725 internationally</strong>, and <span class="r">zero</span> in South America, the only major populated region where Uniqlo has no presence at all.'},
+ {k:['japanese diaspora','japanese community','sao paulo','são paulo'],
+  a:'Brazil holds the largest Japanese diaspora outside Japan, concentrated in São Paulo. It was part of the original attraction, and the fact that it was not enough to overcome the institutional barrier is itself informative.'},
+
+ {k:['how did you build','how was this made','what technology','stack','code','html','built this','made this site','developed'],
+  a:'A single <strong>index.html</strong> with vanilla HTML, CSS and JavaScript. No framework, no build step, no backend. Hash-based routing, content held in a JS array, figures lifted from the presentation. Hosted on GitHub Pages and installable to the home screen through a web manifest.'},
+ {k:['are you ai','are you real','chatgpt','bot','llm','gpt','real ai','artificial intelligence'],
+  a:'Not a language model. I am a keyword matcher with a curated answer set, tolerant of typos, running entirely in your browser. No API, no key, no network call. It means I am fast and never fails mid-presentation, but I only know this case.'},
+ {k:['presentation','slides','deck','ppt'],
+  a:'Eleven slides in the Uniqlo identity: red rationed so it only marks conclusions, one layout per slide with no repeated composition, and the figures you see here lifted straight from it.'},
+ {k:['sources','bibliography','references','citations','where from'],
+  a:'Twenty-five references, from Hymer, Hofstede, Johanson and Vahlne, Prahalad and Doz, Bartlett and Ghoshal, Rodrik, Acemoglu and Robinson, Rivoli, through to World Bank, MDIC, IEMI and the Brazilian trade press. The full list is in the <strong>Report</strong> tab, under the collapsible at the end.'},
+ {k:['report','full report','read report','document','paper','full text'],
+  a:'Open the <strong>Report</strong> tab from the menu, or the red card at the bottom of the overview. It holds the complete text plus the bibliography in a collapsible block.'},
+ {k:['grade','professor','feedback','teacher','mark'],
+  a:'Out of scope for me, but the case was built against three criteria: conclusions rather than raw analysis, data that changes decisions rather than data that fills pages, and genuine depth on the course frameworks.'},
+ {k:['why latin america','why not asia','east asia','why south america','asia instead','why this region','other regions','why not europe','why not india','why not usa','why not africa','why not china','porque america latina'],
+  a:'Because there is nothing left to decide in Asia. Uniqlo already runs roughly <strong>2,400 stores across Asia</strong> plus 794 in Japan, and Europe and North America are established. <span class="r">South America is the single populated region with zero presence</span>, so it is the only genuine blank left on the map. The case is about the last gap, not about ranking regions.'},
+ {k:['why not chile','why not mexico','why not colombia','why not peru','another latin market','different country first','why not uruguay','why argentina and not'],
+  a:'Three reasons Argentina and not a neighbour. It is the market Uniqlo is <strong>actually reported to be evaluating</strong>. Its seasonality and sizing are closest to Brazil, so the learning transfers. And its recent opening makes entry cheaper now than it has been in years. Chile is the H&amp;M precedent but smaller and already served; Mexico belongs to a different trade logic entirely.'},
+ {k:['acquisition','acquire','buy a local','m&a','takeover','buy renner','merger','partner with renner'],
+  a:'It would contradict the model. Buying a local chain gets you stores and sourcing but imports a <strong>different product system and store standard</strong>, and Uniqlo\u2019s advantage <em>is</em> the integrated system. An acquisition would only make sense if the target brought local manufacturing at SPA quality, which is trigger number one anyway.'},
+ {k:['what if nothing changes','tariff never','never changes','what if no trigger','if triggers never','what if brazil never','stuck forever'],
+  a:'Then Uniqlo does not enter, and that is a legitimate outcome rather than a failure of the analysis. The recommendation is <strong>conditional by design</strong>. Option D prices that branch: holding costs share and raises future entry cost, but it still beats entering a structure that guarantees losing money.'},
+ {k:['local production','manufacture','manufacturing','produce','local sourcing','nearshoring','factory','brazilian supplier','make it here','source locally'],
+  a:'The single thing that would change the answer. Local or Mercosur sourcing removes the <span class="r">35% duty</span> from part of the mix, which is the only way to <strong>dissolve</strong> the arithmetic rather than soften it. That is why it is trigger number one and why Shein is localising production in Brazil.'},
+ {k:['shein','temu','ultra fast fashion','fast fashion threat','chinese competitors'],
+  a:'Shein scaled in Brazil through the cross-border parcel channel and is now localising production. It matters here for one reason: it demonstrates that the <strong>only viable route into the low price band is local sourcing</strong>, which is exactly what Uniqlo is waiting on.'},
+ {k:['currency','fx','exchange rate','devaluation','convertibility','repatriation','peso','foreign exchange'],
+  a:'Two different risks. <strong>Brazil:</strong> the real is volatile but convertible. <strong>Argentina:</strong> convertibility and profit repatriation remain policy-dependent, which is precisely why surviving the 2027 electoral cycle is one of the five triggers.'},
+ {k:['limitations','weakness of the analysis','what is missing','flaws','assumptions','how confident','how reliable','is this accurate','criticise the case'],
+  a:'Three, and the case flags all three. The <strong>2.0\u00d7 import factor is an estimate</strong>, not a quoted price. <strong>Hofstede scores are national averages</strong> from a single-firm sample. And the <strong>fifteen-store H&amp;M threshold is a marker we set</strong>, not a published figure.'},
+ {k:['fifteen stores','15 stores','why fifteen','store threshold','why 15'],
+  a:'It is a threshold the case sets, not a published one. It marks roughly the point where H&amp;M has coverage across the main capitals and first-mover advantage stops being available to anyone else.'},
+ {k:['how much','investment','capex','cost of entry','how much money','budget','how expensive'],
+  a:'The case deliberately does not price the capex. The decision turns on <strong>cost structure per unit and on irreversibility</strong>, not on the size of the cheque. What it does quantify is that landed cost roughly doubles, and that breaks the model at any scale.'},
+ {k:['difference from h&m','same as h&m','copy h&m','h&m strategy','just copying'],
+  a:'Same sequencing, different reason. H&amp;M staged to build regional capability in general. Uniqlo would stage while solving a <strong>specific cost problem</strong>, which is why the case insists the institutional half be built in parallel rather than waiting for Argentina to teach something it cannot.'},
+ {k:['sustainability','esg','environment','labour','labor','ethics','supply chain ethics'],
+  a:'Out of scope for a market-entry decision, and the case says so rather than pretending otherwise. Worth one observation only: the local sourcing strategy that unlocks entry would also shorten the supply chain considerably.'},
+ {k:['franchise','licensing','license','agent','distributor'],
+  a:'Ruled out in Topic 6. Uniqlo has skipped these modes in every market because they trade away control over product, quality and store standards, and it gains little local learning in exchange, since its product is standardised before it lands anywhere.'},
+ {k:['what is the question','central question','main question','what are you deciding'],
+  a:'Whether the barriers that stopped the 2025 entry are <strong>cyclical</strong>, in which case only timing matters, or <strong>structural</strong>, in which case sequence and entry design matter more. Topic 7 answers it: structural.'},
+ {k:['fast retailing','parent company','yanai','owner'],
+  a:'Fast Retailing is the Japanese group behind Uniqlo, and one of the largest apparel groups in the world. Uniqlo is its flagship brand and the subject of this case.'}
+];
+
+const FALLBACK = [
+ 'I did not catch that. I can cover the <strong>eight topics</strong>, the numbers (35%, 2.0\u00d7, 1,501 hours, R$314.9bn), the frameworks, the four options, or the five triggers.',
+ 'No match on that one. Try: why Uniqlo left Brazil, why Argentina first, what would change the recommendation, or how this site was built.',
+ 'Not sure I follow. Ask about a framework (Hymer, Hofstede, B-READY, I/R, Uppsala), a competitor, a risk, or the recommendation itself.'
+];
+const CHIPS = ['What is the recommendation?','Why not enter Brazil now?','Explain the border arithmetic','What are the triggers?','How did you build this?'];
+
+const SLANG={u:'you',ur:'your',r:'are',y:'why',vc:'you',pq:'why',pra:'for',
+  wat:'what',wut:'what',whats:'what is',hw:'how',thx:'thanks',plz:'please',
+  rec:'recommendation',recc:'recommendation',latam:'latin america',
+  eua:'usa',us:'usa',uk:'britain',jp:'japan',br:'brazil',arg:'argentina',
+  info:'information',biz:'business',govt:'government',tho:'though',cuz:'because'};
+function norm(s){
+  const base = s.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9$&% ]/g,' ')
+    .replace(/\s+/g,' ').trim();
+  if(!base) return '';
+  return base.split(' ').map(t=>SLANG[t]||t).join(' ');
+}
+function lev(a,b){
+  if(a===b) return 0;
+  if(Math.abs(a.length-b.length)>2) return 9;
+  const m=a.length,n=b.length; let prev=new Array(n+1),cur=new Array(n+1);
+  for(let j=0;j<=n;j++) prev[j]=j;
+  for(let i=1;i<=m;i++){
+    cur[0]=i; let best=i;
+    for(let j=1;j<=n;j++){
+      cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a[i-1]===b[j-1]?0:1));
+      if(cur[j]<best) best=cur[j];
+    }
+    if(best>2) return 9;
+    const t=prev; prev=cur; cur=t;
+  }
+  return prev[n];
+}
+/* score one query token against one keyword word */
+function wordScore(kw, toks){
+  let best=0;
+  for(const t of toks){
+    if(t===kw) return 2.2;
+    if(t.length>3 && kw.length>3 && (t.startsWith(kw)||kw.startsWith(t))) best=Math.max(best,1.6);
+    if(t.length>3 && kw.length>3){
+      const d=lev(t,kw);
+      if(d===1) best=Math.max(best,1.9);
+      else if(d===2 && kw.length>=6) best=Math.max(best,1.5);
+    }
+  }
+  return best;
+}
+/* score a full keyword (may be multi-word) against the query */
+function kwScore(kw, toks, padded){
+  /* exact phrase / whole-word presence, never a substring inside another word */
+  if(padded.indexOf(' '+kw+' ')>=0) return kw.indexOf(' ')>=0 ? 3.4 : 2.4;
+  const words=kw.split(' ');
+  if(words.length===1) return wordScore(kw, toks);
+  /* multi-word: every word must find a match; score by the weakest link */
+  let min=99;
+  for(const w of words){
+    const s = w.length<=2 ? (toks.indexOf(w)>=0?2.2:0) : wordScore(w, toks);
+    if(s===0) return 0;
+    if(s<min) min=s;
+  }
+  return Math.min(3.4, min + 0.9);
+}
+function answer(q){
+  const j=norm(q); if(!j) return null;
+  const toks=j.split(' ').filter(t=>t.length>1);
+  const padded=' '+j+' ';
+  let top=null, topS=0;
+  for(const e of KB){
+    let s=0;
+    for(const kw of e.k){ const v=kwScore(norm(kw), toks, padded); if(v>s) s=v; }
+    if(s>topS){ topS=s; top=e; }
+  }
+  return topS>=1.45 ? top.a : null;
+}
+
+const log=document.getElementById('log'), fab=document.getElementById('fab'),
+      chat=document.getElementById('chat'), cin=document.getElementById('cin');
+function bubble(html, who){
+  const d=document.createElement('div'); d.className='msg '+who; d.innerHTML=html;
+  log.appendChild(d); log.scrollTop=log.scrollHeight; return d;
+}
+function chips(){
+  const w=document.createElement('div'); w.className='chips';
+  CHIPS.forEach(c=>{
+    const b=document.createElement('button'); b.className='chip'; b.type='button'; b.textContent=c;
+    b.onclick=()=>{ ask(c); };
+    w.appendChild(b);
+  });
+  log.appendChild(w); log.scrollTop=log.scrollHeight;
+}
+let started=false;
+function ask(q){
+  bubble(q.replace(/</g,'&lt;'),'u');
+  const t=bubble('<span class="typing"><span></span><span></span><span></span></span>','b');
+  setTimeout(()=>{
+    const a=answer(q);
+    t.innerHTML = a || FALLBACK[Math.floor(Math.random()*FALLBACK.length)];
+    log.scrollTop=log.scrollHeight;
+  }, 260+Math.random()*220);
+}
+fab.addEventListener('click',()=>{
+  const on=chat.classList.toggle('on'); fab.classList.toggle('on',on);
+  if(on && !started){
+    started=true;
+    bubble('Hi. I can explain any part of the Uniqlo case: the topics, the numbers, the frameworks, or the decision. Ask in your own words, typos are fine.','b');
+    chips();
+  }
+  if(on && window.innerWidth>719) setTimeout(()=>cin.focus(),120);
+});
+document.getElementById('cform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=cin.value.trim(); if(!v) return;
+  cin.value=''; ask(v);
+});
+</script>
+</body>
+</html>
